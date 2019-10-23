@@ -1,9 +1,11 @@
 # SUV Prediction
+import os
 import numpy as np
 import matplotlib as plt
 import pandas as pd
+path = os.getcwd()
 
-dataset = pd.read_csv("SUV_Predictions.csv")
+dataset = pd.read_csv(f'{path}\\SUV_Predictions.csv')
 
 dataset.head()
 
@@ -27,3 +29,5 @@ y_pred = classifier.predict(X_test)
 
 from sklearn.metrics import accuracy_score
 accuracy_score(y_test, y_pred)
+
+print(accuracy_score(y_test, y_pred))
